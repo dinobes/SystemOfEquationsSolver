@@ -25,6 +25,9 @@ se_test5 :
 se_test6 :
 				g++ -Wall -Werror -pedantic -g --std=c++11 Num.cpp lmath.cpp SysEq.cpp se_test6.cpp -o se_test6.exe
 
+se_test7 :
+				g++ -Wall -Werror -pedantic -g --std=c++11 Num.cpp lmath.cpp SysEq.cpp se_test7.cpp -o se_test7.exe
+
 main:
 				g++ -Wall -Werror -pedantic -g --std=c++11 Num.cpp main.cpp -o main.exe
 

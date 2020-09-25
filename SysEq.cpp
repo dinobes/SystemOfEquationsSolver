@@ -212,3 +212,42 @@ bool SysEq::leadingOneColumnCheck(int col)
   }
   return true;
 }
+
+void SysEq::printSwapStatement(int r1, int r2)
+{
+  cout << "Swapped rows " << r1 << " and " << r2 << endl;
+}
+
+void SysEq::printScaleStatement(int r, Num scalar, bool useDivide)
+{
+  if (useDivide && scalar.denominator > scalar.numerator) {
+    cout << "Divided row " << r << " by " << scalar.denominator;
+    if (abs(scalar.numerator) > 1) {
+      cout << "/" << scalar.numerator;
+    }
+  } else {
+    cout << "Multiplied row " << r << " by " << scalar.numerator;
+    if (scalar.denominator > 1) {
+      cout << "/" << scalar.denominator;
+    }
+  }
+  cout << endl;
+}
+
+void SysEq::printAddStatement(int r, Num scalar, bool useSubtract)
+{
+  if (useSubtract && scalar.numerator < 0) {
+    cout << "Subtracted " << abs(scalar.numerator);
+    if (scalar.denominator > 1) {
+      cout << "/" << scalar.denominator;
+    }
+    cout << " x row " << workingRow << " from row " << r;
+  } else {
+    cout << "Added " << scalar.numerator;
+    if (scalar.denominator > 1) {
+      cout << "/" << scalar.denominator;
+    }
+    cout << " x row " << workingRow << " to row " << r;
+  }
+  cout << endl;
+}

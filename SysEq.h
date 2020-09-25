@@ -32,4 +32,7 @@ class SysEq {
     void handleZeroRows();
     bool leadingOneRowCheck(int);
     bool leadingOneColumnCheck(int);
+    void printSwapStatement(int, int);
+    void printScaleStatement(int, Num, bool);
+    void printAddStatement(int, Num, bool);
 };
